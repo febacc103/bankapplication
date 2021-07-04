@@ -28,7 +28,7 @@ input {
 }
 
 .items {
-    color: white;
+    color: rgb(49, 10, 192);
     padding: 10px;
     width: 300px;
     text-align: center;
@@ -127,4 +127,8 @@ p {
 p:hover {
     font-size: 150%;
     transition-delay: 10ms;
+}
+
+#aim {
+    color: brown;
 }
