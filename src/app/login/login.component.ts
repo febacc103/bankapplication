@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   pswd=""
 
 
-   users = {
+   users:any = {
     1000: { acno: 1000, username: "userone", password: "userone", actype: "savings", balance: 5000 },
     1001: { acno: 1001, username: "usertwo", password: "usertwo", actype: "savings", balance: 6000 },
     1002: { acno: 1002, username: "userthree", password: "userthree", actype: "savings", balance: 7000 },
@@ -38,7 +38,28 @@ export class LoginComponent implements OnInit {
  
   }
  login(){
-   alert("login success")
+   var acno=this.accno;
+   var pwd=this.pswd;
+   let accDetails=this.users;
+   if(acno in accDetails){
+   
+     if(pwd==accDetails[acno]["password"]){
+       alert("login success");
+     }
+      else{
+        alert("incorect password");
+      }
+     
+
+    }
+   else{
+     alert("invalid account number")
+   }
+
+
+
+
+   alert("login clicked")
  } 
 
 
