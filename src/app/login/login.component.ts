@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   aim= "Welcome to LuminarBank";
   acc="account number please";
   accno="";
-  pswd=""
+  pswd="";
 
 
    users:any = {
@@ -29,39 +29,36 @@ export class LoginComponent implements OnInit {
   accChange(event:any){
     this.accno=event.target.value;
     console.log(event.target.value);
- 
+
   }
-  
+
   pswdChange(event:any){
     this.pswd=event.target.value;
     console.log(event.target.value);
- 
+
   }
- login(){
-   var acno=this.accno;
-   var pwd=this.pswd;
-   let accDetails=this.users;
+ login(a:any,p:any){
+   var acno=a.value;
+   var pwd=p.value;
+
+   let accDetails = this.users;
+
    if(acno in accDetails){
-   
-     if(pwd==accDetails[acno]["password"]){
-       alert("login success");
-     }
-      else{
-        alert("incorect password");
-      }
-     
 
+    if(pwd==accDetails[acno]["password"])
+    {
+      alert("login success");
+      
     }
-   else{
-     alert("invalid account number")
-   }
+    else{
+      alert("incorrect password");
+    }
+}
+  else{
 
-
-
-
-   alert("login clicked")
+  
+   alert("invalid account number");
  } 
 
 
-
-}
+ }}

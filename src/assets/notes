@@ -19,6 +19,8 @@ Angular
           4.1.2 from view to component
                   4.1.2.1 Event binding- syntax:(eventNme)="function call"
                   4.1.2.2 Event binding using $event-syntax:"function call($event)"
+                  4.1.2.3 Template-referencingsyntax:#template-refererencing-variable
+
 
 
 
