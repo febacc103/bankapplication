@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   aim= "Welcome to LuminarBank";
-  acc="account number please";
-  accno="";
+  acc="";
+  accno="account number please";
   pswd="";
 
 
@@ -37,28 +37,54 @@ export class LoginComponent implements OnInit {
     console.log(event.target.value);
 
   }
- login(a:any,p:any){
-   var acno=a.value;
-   var pwd=p.value;
+  login(){
+    var acno=this.accno;
+    var pwd=this.pswd;
+ 
+    let accDetails = this.users;
+ 
+    if(acno in accDetails){
+ 
+     if(pwd==accDetails[acno]["password"])
+     {
+       alert("login success");
+       
+     }
+     else{
+       alert("incorrect password");
+     }
+ }
+   else{
+ 
+   
+    alert("invalid account number");
+  } 
+ 
+ 
+  }}
+ 
+//  login(a:any,p:any){
+//    var acno=a.value;
+//    var pwd=p.value;
 
-   let accDetails = this.users;
+//    let accDetails = this.users;
 
-   if(acno in accDetails){
+//    if(acno in accDetails){
 
-    if(pwd==accDetails[acno]["password"])
-    {
-      alert("login success");
+//     if(pwd==accDetails[acno]["password"])
+//     {
+//       alert("login success");
       
-    }
-    else{
-      alert("incorrect password");
-    }
-}
-  else{
+//     }
+//     else{
+//       alert("incorrect password");
+//     }
+// }
+//   else{
 
   
-   alert("invalid account number");
- } 
+//    alert("invalid account number");
+//  } 
 
 
- }}
+//  }}

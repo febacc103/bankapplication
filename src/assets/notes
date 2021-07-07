@@ -25,3 +25,4 @@ Angular
 
 
     4.2 Two way binding
+         4.2.1 ng Model- FormModule, [(ngModel)]="Property-name"
