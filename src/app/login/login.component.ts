@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +15,9 @@ export class LoginComponent implements OnInit {
   pswd="";
 
 
-   users:any = {
-    1000: { acno: 1000, username: "userone", password: "userone", actype: "savings", balance: 5000 },
-    1001: { acno: 1001, username: "usertwo", password: "usertwo", actype: "savings", balance: 6000 },
-    1002: { acno: 1002, username: "userthree", password: "userthree", actype: "savings", balance: 7000 },
-    1003: { acno: 1003, username: "userfour", password: "userfour", actype: "savings", balance: 8000 }
+  
 
-}
-
-  constructor() { }
+  constructor(private router:Router,private ds:DataService) { }
 
   ngOnInit(): void {
   }
@@ -40,28 +36,27 @@ export class LoginComponent implements OnInit {
   login(){
     var acno=this.accno;
     var pwd=this.pswd;
+    let accDetails = this.ds.users;
+    var result=this.ds.login(acno,pwd)
+    if(result){
+      alert("login success");
+      this.router.navigateByUrl("dashboard");
+    }
+    //    if(acno in accDetails){
+    
+    //     if(pwd==accDetails[acno]["password"]){}    
+    //     else{
+    //       alert("incorrect password");
+    //     }
+    //   }
+    //     else{ 
+    //    alert("invalid account number");
+    //  } 
  
-    let accDetails = this.users;
+    }
  
-    if(acno in accDetails){
- 
-     if(pwd==accDetails[acno]["password"])
-     {
-       alert("login success");
-       
-     }
-     else{
-       alert("incorrect password");
-     }
- }
-   else{
- 
-   
-    alert("invalid account number");
-  } 
- 
- 
-  }}
+  }
+  
  
 //  login(a:any,p:any){
 //    var acno=a.value;

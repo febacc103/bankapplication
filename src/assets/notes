@@ -2,7 +2,7 @@ Angular
 -----------
 
 
-1.component
+1.component- root app component
 
 2. module
 
@@ -26,3 +26,7 @@ Angular
 
     4.2 Two way binding
          4.2.1 ng Model- FormModule, [(ngModel)]="Property-name"
+
+5.routing    
+6. dependency injection/invesion of control
+7.services
